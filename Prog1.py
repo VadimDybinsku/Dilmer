@@ -10,15 +10,12 @@ while True:
     else:
         tokens.append(float(x))
         break
-
 for i in range(len(tokens) -1, 0, -1):
     token = tokens[i]
     if token == '*':
         tokens[i-1] = tokens[i-1] * tokens[i+1]
         del tokens[i:i+2]
-for i in range(len(tokens) -1, 0, -1):
-    token = tokens[i]
-    if token == '/':
+    elif token == '/':
         tokens[i-1] = tokens[i-1] / tokens[i+1]
         del tokens[i:i+2]
 for i in range(len(tokens) -1, 0, -1):
@@ -26,9 +23,7 @@ for i in range(len(tokens) -1, 0, -1):
     if token == '+':
         tokens[i-1] = tokens[i-1] + tokens[i+1]
         del tokens[i:i+2]
-for i in range(len(tokens) -1, 0, -1):
-    token = tokens[i]
-    if token == '-':
+    elif token == '-':
         tokens[i-1] = tokens[i-1] - tokens[i+1]
         del tokens[i:i+2]
 assert len(tokens) == 1
