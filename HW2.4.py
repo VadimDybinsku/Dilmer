@@ -10,7 +10,10 @@ def factorial(fact):
         return 1
     else:
         return fact * factorial(fact - 1)
-for i in range(n-1):
+for i in range(0,n,2):
+    members = members - x**power / factorial(power)
+    power = power + 2
+for i in range(1,n,2):
     members = members + x**power / factorial(power)
     power = power + 2
 cos_x = 1 - members
