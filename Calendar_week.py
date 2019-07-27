@@ -1,8 +1,6 @@
 from calendar import weekday
-date =(input('Введите дату: ').split('.'))
-year = int(date[2])
-month = int(date[1])
-day = int(date[0])
+date =input('Введите дату: ')
+day, month, year = map(int,date.split('.'))
 wd = weekday(year, month, day)
 if wd == 0:
     print('Понедельник')
