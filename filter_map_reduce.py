@@ -28,7 +28,4 @@ first_num = {
     'union': [],
     'reverse': []
 }
-num = [*filter (filters[predicate], num)]
-num = [*map(mappers[mapper], num)]
-num = [reduce(reducers[reducer], num, first_num[reducer])]
-print(num)
+print([reduce(reducers[reducer], (*map(mappers[mapper], num), (*filter (filters[predicate], num))), first_num[reducer])])
