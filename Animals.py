@@ -11,8 +11,8 @@ class dog(animals):
     char_2_1 = 'say: woof woof!!!'
 class cat(animals):
     char_3_1 = 'say: meow'
-pappy = dog('woof woof!!!')
-kitti = cat('meow')
+pappy = dog(dog.char_2_1)
+kitti = cat(cat.char_3_1)
 pappy.voice()
 kitti.voice()
 print('Dog:', (dog.char_1_2),',', (dog.char_1_3),',', (dog.char_2_1))
