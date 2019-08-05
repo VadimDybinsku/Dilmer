@@ -1,18 +1,14 @@
+def f(self):
+    print(self)
+
 class Descriptor(object):
-    def __get__(self, instante, owner):
-        pass
+    def __get__(self, instance, owner):
+        def wrapper():
+            return f(instance)
+        return wrapper
 class A(object):
-    x = Descriptor
-    def f(self):
-        print('hello')
-# instance - сам объект
-# owner - сам класс
+    f = Descriptor
+
 a = A()
-'''print(A.f)
-print(a.f)
-print(A.x)
-print(a.x)
-A.f(a)
-a.f()'''
-a.x
-A.x.__get__(a, type(a))
+print(a)
+a.f()
