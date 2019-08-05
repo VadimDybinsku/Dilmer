@@ -1,9 +1,10 @@
+class C(object):
+    def __get__(self, instante, owner):
+        return 4
 class A(object):
     x = 1
 class B(A):
-    x = 2
-    def __init__(self):
-        self.x = 3
+    x = C()
 
 b = B()
 print(b.x)
