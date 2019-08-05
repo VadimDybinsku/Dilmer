@@ -1,11 +1,18 @@
-class C(object):
+class Descriptor(object):
     def __get__(self, instante, owner):
-        return 4
+        pass
 class A(object):
-    x = 1
-class B(A):
-    x = C()
-    def __init__(self):
-        x = 3
-b = B()
-print(b.x)
+    x = Descriptor
+    def f(self):
+        print('hello')
+# instance - сам объект
+# owner - сам класс
+a = A()
+'''print(A.f)
+print(a.f)
+print(A.x)
+print(a.x)
+A.f(a)
+a.f()'''
+a.x
+A.x.__get__(a, type(a))
